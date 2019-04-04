@@ -1,0 +1,12 @@
+<h1><%= @recipe.name %></h1>
+<ul>
+  <% @ingredients.each do |ingredient| %>
+  <li><%= ingredient %></li>
+  <% end %>
+</ul>
+<h3>Cook Time: <%= @recipe.cook_time %> minutes</h3>
+
+<form action="/recipes/<%= @recipe.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form>
